@@ -11,28 +11,52 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <header>Tic-Tac-Toe</header>
+      <h1>Tic-Tac-Toe</h1>
 
       <main>
-        <aside>
-          <button id="new-game">New Game</button>
+        <aside class="left-column">
+          <form id="new-game">
+            <input type="submit" value="New Game!">
+          </form>
+          <br>
+          <form id="sign-up">
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <!-- <button id="toggle" type="button">Show</button> -->
+            <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+            <input type="submit" value="Sign Up!">
+          </form>
+          <br>
+          <form id="sign-in">
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign In!">
+          </form>
+          <br>
+          <form id="change-password">
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <input type="submit" value="Change Password!">
+          </form>
+          <br>
+          <form id="sign-out">
+            <input type="submit" value="Sign out!">
+          </form>
         </aside>
+
         <div class="container">
           <div class="row">
-            <div class="col-2 box left-top" data-index='0' id="box0"></div>
-            <div class="col-2 box middle-top" data-index='1' id="box1"></div>
-            <div class="col-2 box right-top" data-index='2' id="box2"></div>
-          </div>
-          <div class="row">
-            <div class="col-2 box left-middle" data-index='3' id="box3"></div>
-            <div class="col-2 box center-middle" data-index='4' id="box4"></div>
-            <div class="col-2 box right-middle" data-index='5' id="box5"></div>
-          </div>
-          <div class="row">
-            <div class="col-2 box left-bottom" data-index='6' id="box6"></div>
-            <div class="col-2 box center-bottom" data-index='7' id="box7"></div>
-            <div class="col-2 box right-bottom" data-index='8' id="box8"></div>
+            <div class="col-4 box left-top" data-id='0'></div>
+            <div class="col-4 box right-top" data-id='2'></div>
+            <div class="col-4 box middle-top" data-id='1'></div>
+            <div class="col-4 box left-middle" data-id='3'></div>
+            <div class="col-4 box center-middle" data-id='4'></div>
+            <div class="col-4 box right-middle" data-id='5'></div>
+            <div class="col-4 box left-bottom" data-id='6'></div>
+            <div class="col-4 box center-bottom" data-id='7'></div>
+            <div class="col-4 box right-bottom" data-id='8'></div>
           </div>
         </div>
       </main>

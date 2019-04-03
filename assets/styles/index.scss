@@ -1,50 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
-header {
-  font-size: 50px;
-}
-
-main {
-  background-color: $green;
-}
-
 .box {
-  height: 50px;
-  padding: 15px;
-}
-
-.left-top {
-  border-bottom: 5px solid $black;
-  border-right: 5px solid $black;
-}
-
-.middle-top {
-  border-bottom: 5px solid $black;
-}
-
-.right-top {
-  border-bottom: 5px solid $black;
-  border-left: 5px solid $black;
-}
-
-.left-middle {
-  border-bottom: 5px solid $black;
-  border-right: 5px solid $black;
-}
-
-.center-middle {
-  border-bottom: 5px solid $black;
-}
-
-.right-middle {
-  border-bottom: 5px solid $black;
-  border-left: 5px solid $black;
-}
-
-.left-bottom {
-  border-right: 5px solid $black;
-}
-
-.right-bottom {
-  border-left: 5px solid $black;
+  border: 2px solid $black;
+  text-align: center;
+  height: 100px;
+  width: 100px;
 }

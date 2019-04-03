@@ -4,7 +4,8 @@
 const newGame = function () {
 
 }
-// let currentBoard = ['', '', '', '', '', '', '', '', '']
+
+const currentBoard = ['', '', '', '', '', '', '', '', '']
 
 let currentPlayer = 'x'
 
@@ -14,10 +15,14 @@ const switchPlayer = function () {
   } else {
     currentPlayer = 'x'
   }
+  return currentPlayer
 }
 
 const updateBox = function () {
   const content = $(event.target).text()
+  const boxNum = $(event.target).data('id')
+  currentBoard[boxNum] = currentPlayer
+  console.log(currentBoard)
   if (content === '' && currentPlayer === 'x') {
     $(event.target).text(currentPlayer)
     switchPlayer()
