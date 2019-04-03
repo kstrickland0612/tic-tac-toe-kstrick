@@ -6,8 +6,28 @@ const newGame = function () {
 }
 
 const currentBoard = ['', '', '', '', '', '', '', '', '']
-
 let currentPlayer = 'x'
+
+const checkForWin = function (currentBoard) {
+  if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') || (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
+    console.log('win')
+  } else if ((currentBoard[3] === 'x' && currentBoard[5] === 'x' && currentBoard[5] === 'x') || (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
+    console.log('win')
+  } else if ((currentBoard[6] === 'x' && currentBoard[7] === 'x' && currentBoard[8] === 'x') || (currentBoard[6] === 'o' && currentBoard[7] === 'o' && currentBoard[8] === 'o')) {
+    console.log('win')
+  } else if ((currentBoard[0] === 'x' && currentBoard[4] === 'x' && currentBoard[8] === 'x') || (currentBoard[0] === 'o' && currentBoard[4] === 'o' && currentBoard[8] === 'o')) {
+    console.log('win')
+  } else if ((currentBoard[0] === 'x' && currentBoard[3] === 'x' && currentBoard[6] === 'x') || (currentBoard[0] === 'o' && currentBoard[3] === 'o' && currentBoard[6] === 'o')) {
+    console.log('win')
+  } else if ((currentBoard[1] === 'x' && currentBoard[4] === 'x' && currentBoard[7] === 'x') || (currentBoard[1] === 'o' && currentBoard[4] === 'o' && currentBoard[7] === 'o')) {
+    console.log('win')
+  } else if ((currentBoard[2] === 'x' && currentBoard[5] === 'x' && currentBoard[8] === 'x') || (currentBoard[2] === 'o' && currentBoard[5] === 'o' && currentBoard[8] === 'o')) {
+    console.log('win')
+  } else if ((currentBoard[2] === 'x' && currentBoard[4] === 'x' && currentBoard[6] === 'x') || (currentBoard[2] === 'o' && currentBoard[4] === 'o' && currentBoard[6] === 'o')) {
+    console.log('win')
+  }
+}
+console.log(checkForWin(currentBoard))
 
 const switchPlayer = function () {
   if (currentPlayer === 'x') {
@@ -22,12 +42,15 @@ const updateBox = function () {
   const content = $(event.target).text()
   const boxNum = $(event.target).data('id')
   currentBoard[boxNum] = currentPlayer
-  console.log(currentBoard)
   if (content === '' && currentPlayer === 'x') {
     $(event.target).text(currentPlayer)
+    console.log(currentBoard)
+    checkForWin(currentBoard)
     switchPlayer()
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
+    console.log(currentBoard)
+    checkForWin(currentBoard)
     switchPlayer()
   } else {
     console.log('that spot is already taken')
@@ -40,5 +63,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  checkForWin
 }
