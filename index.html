@@ -12,22 +12,27 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <header>Tic-Tac-Toe</header>
+
       <main>
+        <aside>
+          <button id="new-game">New Game</button>
+        </aside>
         <div class="container">
           <div class="row">
-            <div>0</div>
-            <div>1</div>
-            <div>2</div>
+            <div class="col-2 box left-top" data-index='0' id="box0">0</div>
+            <div class="col-2 box middle-top" data-index='1' id="box1">1</div>
+            <div class="col-2 box right-top" data-index='2' id="box2">2</div>
           </div>
           <div class="row">
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
+            <div class="col-2 box left-middle" data-index='3' id="box3">3</div>
+            <div class="col-2 box center-middle" data-index='4' id="box4">4</div>
+            <div class="col-2 box right-middle" data-index='5' id="box5">5</div>
           </div>
           <div class="row">
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
+            <div class="col-2 box left-bottom" data-index='6' id="box6">6</div>
+            <div class="col-2 box center-bottom" data-index='7' id="box7">7</div>
+            <div class="col-2 box right-bottom" data-index='8' id="box8">8</div>
           </div>
         </div>
       </main>

@@ -1,1 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+
+header {
+  font-size: 50px;
+}
+
+main {
+  background-color: $green;
+}
+
+.box {
+  border: 20px solid $black;
+  padding: 15px;
+}
