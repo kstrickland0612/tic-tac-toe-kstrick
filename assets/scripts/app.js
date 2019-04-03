@@ -7,20 +7,5 @@ const events = require('./events.js')
 // require('./example')
 
 $(() => {
-  $('#new-game').on('click', events.newGame)
-  $('#box0').on('click', events.updateBox0)
-  $('#box1').on('click', events.updateBox1)
-  $('#box2').on('click', events.updateBox2)
-  $('#box3').on('click', events.updateBox3)
-  $('#box4').on('click', events.updateBox4)
-  $('#box5').on('click', events.updateBox5)
-  $('#box6').on('click', events.updateBox6)
-  $('#box7').on('click', events.updateBox7)
-  $('#box8').on('click', events.updateBox8)
+  events.addHandlers()
 })
-
-// eventually I should combine all click handlers for boxes into one,
-// probably using a for loop like this:
-//   for (let i = 0; i < 9; i++) {
-//     $('#box' + i).on('click', events.updateBox(i))
-// }
