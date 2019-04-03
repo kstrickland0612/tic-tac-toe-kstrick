@@ -6,49 +6,88 @@ const newGame = function () {
 }
 // let currentBoard = ['', '', '', '', '', '', '', '', '']
 
+const currentPlayer = {
+  playerIcon: 'x'
+}
+
+// const switchPlayerIcon = function () {
+//   if (currentPlayer.playerIcon === 'x') {
+//     currentPlayer.playerIcon = 'o'
+//   } else {
+//     currentPlayer.playerIcon = 'x'
+//   }
+// }
+
 const updateBox0 = function () {
-  const playerIcon = 'x'
-  $('#box0').text(playerIcon)
+  if ($('#box0').text() === '') {
+    $('#box0').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox1 = function () {
-  const playerIcon = 'x'
-  $('#box1').text(playerIcon)
+  if ($('#box1').text() === '') {
+    $('#box1').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox2 = function () {
-  const playerIcon = 'x'
-  $('#box2').text(playerIcon)
+  if ($('#box2').text() === '') {
+    $('#box2').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox3 = function () {
-  const playerIcon = 'x'
-  $('#box3').text(playerIcon)
+  if ($('#box3').text() === '') {
+    $('#box3').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox4 = function () {
-  const playerIcon = 'x'
-  $('#box4').text(playerIcon)
+  if ($('#box4').text() === '') {
+    $('#box4').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox5 = function () {
-  const playerIcon = 'x'
-  $('#box5').text(playerIcon)
+  if ($('#box5').text() === '') {
+    $('#box5').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox6 = function () {
-  const playerIcon = 'x'
-  $('#box6').text(playerIcon)
+  if ($('#box6').text() === '') {
+    $('#box6').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox7 = function () {
-  const playerIcon = 'x'
-  $('#box7').text(playerIcon)
+  if ($('#box7').text() === '') {
+    $('#box7').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 const updateBox8 = function () {
-  const playerIcon = 'x'
-  $('#box8').text(playerIcon)
+  if ($('#box8').text() === '') {
+    $('#box8').text(currentPlayer.playerIcon)
+  } else {
+    console.log('space already taken')
+  }
 }
 
 module.exports = {
