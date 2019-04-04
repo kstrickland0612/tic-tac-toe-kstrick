@@ -21,9 +21,21 @@ const signInFail = function (data) {
   $('form').trigger('reset')
 }
 
+const changePwSuccess = function (data) {
+  console.log('change pw success ran with the data: ', data)
+  $('form').trigger('reset')
+}
+
+const changePwFail = function (data) {
+  console.log('change pw failure ran with the data: ', data)
+  $('form').trigger('reset')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFail,
   signInSuccess,
-  signInFail
+  signInFail,
+  changePwSuccess,
+  changePwFail
 }
