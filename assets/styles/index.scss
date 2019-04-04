@@ -2,7 +2,12 @@
 
 .box {
   border: 2px solid $black;
-  height: 100px;
+  height: 150px;
   width: 100px;
   text-align: center;
+  background-color: $green;
+}
+
+aside {
+  border: 1px solid $black;
 }
