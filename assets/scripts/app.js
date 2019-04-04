@@ -7,9 +7,11 @@
 // require('./example')
 
 const events = require('./game/events.js')
+const engine = require('./game/engine.js')
 const authevents = require('./auth/authevents.js')
 
 $(() => {
+  engine.addHandlers()
   events.addHandlers()
   authevents.addHandlers()
 })

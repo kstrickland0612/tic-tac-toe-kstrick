@@ -1,6 +1,8 @@
 const events = require('./events.js')
 const store = require('../store.js')
 
+// GAME PLAY MESSAGING
+
 const winnerWinner = function () {
   console.log(events)
   $('.game-updates').text('Game over! ' + store.winner + ' wins!')
@@ -22,10 +24,22 @@ const draw = function () {
   $('.game-updates').text('Game over! It\'s a DRAW!')
 }
 
+// GAME API STUFF
+
+const createGameSuccess = function (response) {
+  console.log('successfully created a new game: ', response)
+}
+
+const createGameFail = function (response) {
+  console.log('failed to create new game: ', response)
+}
+
 module.exports = {
   invalidMoveMessage,
   gameOverMessage,
   turnChange,
   winnerWinner,
-  draw
+  draw,
+  createGameSuccess,
+  createGameFail
 }

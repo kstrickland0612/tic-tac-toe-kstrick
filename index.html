@@ -17,15 +17,10 @@
 
       <main>
         <aside class="left-column">
-          <div class="user-message">user updates</div>
-          <form id="new-game">
-            <input type="submit" value="New Game!">
-          </form>
-          <br>
+          <div class="user-message"></div>
           <form id="sign-up">
             <input type="email" name="credentials[email]" placeholder="Email">
             <input type="password" name="credentials[password]" placeholder="Password">
-            <!-- <button id="toggle" type="button">Show</button> -->
             <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation">
             <input type="submit" value="Sign Up!">
           </form>
@@ -52,6 +47,9 @@
         <div class="whose-turn">x's turn!</div>
       <br>
       <h1>Game Board</h1>
+      <form id="new-game">
+        <input type="submit" value="New Game!">
+      </form>
         <div class="container">
           <div class="row">
             <div class="col-4 col-md-2 box left-top" data-id='0'></div>
