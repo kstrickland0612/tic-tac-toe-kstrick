@@ -1,13 +1,24 @@
 const events = require('./events.js')
 
-const invalidMove = function () {
-  $('#game-updates').text('Invalid move, try again!')
+const invalidMoveMessage = function () {
+  $('.game-updates').text('Invalid move!')
 }
 
-const turnChange = function () {
-  $('#whose-turn').text(events.currentPlayer + `'s turn!`)
+// const turnChange = function () {
+//   $('.whose-turn').text(events.currentPlayer + ', GO!')
+// }
+//
+const winnerWinner = function () {
+  $('.game-updates').text(events.winner + ' wins!')
 }
+
+// const draw = function () {
+//   $('.game-updates').text('DRAW!')
+// }
+
 module.exports = {
-  invalidMove,
-  turnChange
+  invalidMoveMessage,
+  // turnChange,
+  winnerWinner
+  // draw
 }
