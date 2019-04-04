@@ -1,7 +1,8 @@
 // const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 
-const newGame = function () {
+const newGame = {
 
 }
 
@@ -13,9 +14,10 @@ let gameOver = false
 const checkForWin = function (currentBoard) {
   if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') || (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
     winner = currentBoard[0]
+    store.winner = winner
     gameOver = true
-    $('.game-updates').text(winner + ' wins!')
-  } else if ((currentBoard[3] === 'x' && currentBoard[5] === 'x' && currentBoard[5] === 'x') || (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
+    ui.winnerWinner()
+  } else if ((currentBoard[3] === 'x' && currentBoard[4] === 'x' && currentBoard[5] === 'x') || (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
     winner = currentBoard[3]
     gameOver = true
   } else if ((currentBoard[6] === 'x' && currentBoard[7] === 'x' && currentBoard[8] === 'x') || (currentBoard[6] === 'o' && currentBoard[7] === 'o' && currentBoard[8] === 'o')) {
@@ -37,6 +39,14 @@ const checkForWin = function (currentBoard) {
     winner = currentBoard[2]
     gameOver = true
   }
+  // } else if (currentBoard.every(id => {
+  //   if (id !== '') {
+  //     gameOver = true
+  //   }
+  // })
+  // ) {
+  //   console.log('its a draw')
+  // }
   console.log(winner)
   console.log(gameOver)
   console.log(currentBoard)
@@ -48,30 +58,36 @@ const checkForWin = function (currentBoard) {
 //       gameOver = true
 //     }
 //   })
-//   console.log('draw')
+//   console.log('its a draw')
 // }
 
 const switchPlayer = function () {
   if (currentPlayer === 'x') {
     currentPlayer = 'o'
+    store.currentPlayer = currentPlayer
   } else {
     currentPlayer = 'x'
+    store.currentPlayer = currentPlayer
   }
 }
 
 const updateBox = function () {
   const content = $(event.target).text()
   const boxNum = $(event.target).data('id')
-  if (content === '' && currentPlayer === 'x') {
+  if (gameOver === true) {
+    ui.gameOverMessage()
+  } else if (content === '' && currentPlayer === 'x') {
     $(event.target).text(currentPlayer)
     currentBoard[boxNum] = currentPlayer
     checkForWin(currentBoard)
     switchPlayer()
+    ui.turnChange()
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     currentBoard[boxNum] = currentPlayer
     checkForWin(currentBoard)
     switchPlayer()
+    ui.turnChange()
   } else {
     ui.invalidMoveMessage()
   }
@@ -82,6 +98,16 @@ const addHandlers = function () {
   $('.box').on('click', updateBox)
 }
 
+const whoWon = function () {
+  return winner
+}
+
+const whoIsCurrentPlayer = function () {
+  return currentPlayer
+}
+
 module.exports = {
-  addHandlers
+  addHandlers,
+  whoWon,
+  whoIsCurrentPlayer
 }

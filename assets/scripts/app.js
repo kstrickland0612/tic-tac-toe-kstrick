@@ -1,5 +1,5 @@
 'use strict'
-const events = require('./events.js')
+const events = require('./game/events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -7,5 +7,6 @@ const events = require('./events.js')
 // require('./example')
 
 $(() => {
+  console.log(events)
   events.addHandlers()
 })
