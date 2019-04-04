@@ -31,11 +31,24 @@ const changePwFail = function (data) {
   $('form').trigger('reset')
 }
 
+const signOutSuccess = function (data) {
+  console.log('sign out success')
+  $('form').trigger('reset')
+  store.user = null
+}
+
+const signOutFail = function (data) {
+  console.log('sign out failed')
+  $('form').trigger('reset')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFail,
   signInSuccess,
   signInFail,
   changePwSuccess,
-  changePwFail
+  changePwFail,
+  signOutSuccess,
+  signOutFail
 }
