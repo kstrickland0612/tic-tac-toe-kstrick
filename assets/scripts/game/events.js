@@ -64,8 +64,8 @@ const checkForWin = function (currentBoard) {
 
 const checkForDraw = function (gameBoard) {
   if (currentBoard.every(index => index !== '')) {
-    gameOver = true
     ui.draw()
+    gameOver = true
   }
 }
 
