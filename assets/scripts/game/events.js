@@ -15,14 +15,6 @@ let currentPlayer = 'x'
 let winner = ''
 let gameOver = false
 
-const fullBoard = (box) => {
-  if (box) {
-    return true
-  } else {
-    return false
-  }
-}
-
 const checkForWin = function (currentBoard) {
   if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') || (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
     winner = currentBoard[0]
