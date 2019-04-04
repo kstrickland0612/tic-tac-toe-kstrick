@@ -7,6 +7,5 @@ const events = require('./game/events.js')
 // require('./example')
 
 $(() => {
-  console.log(events)
   events.addHandlers()
 })

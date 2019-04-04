@@ -3,11 +3,11 @@ const store = require('../store.js')
 
 const winnerWinner = function () {
   console.log(events)
-  $('.game-updates').text(store.winner + ' wins!')
+  $('.game-updates').text('Game over! ' + store.winner + ' wins!')
 }
 
 const turnChange = function () {
-  $('.whose-turn').text(store.currentPlayer + ', GO!')
+  $('.whose-turn').text(store.currentPlayer + '\'s turn!')
 }
 
 const invalidMoveMessage = function () {
@@ -15,11 +15,11 @@ const invalidMoveMessage = function () {
 }
 
 const gameOverMessage = function () {
-  $('.game-updates').text('Game Over!')
+  $('.game-updates').text('Game Over! Go play again :)')
 }
 
 const draw = function () {
-  $('.game-updates').text('DRAW!')
+  $('.game-updates').text('Game over! It\'s a DRAW!')
 }
 
 module.exports = {
