@@ -3,6 +3,7 @@ const store = require('../store.js')
 const signUpSuccess = function (data) {
   $('.user-message').text('Sign up success!')
   $('form').trigger('reset')
+  $('#sign-up').hide()
 }
 
 const signUpFail = function (data) {
@@ -14,6 +15,12 @@ const signInSuccess = function (data) {
   $('.user-message').text('Sign in success!')
   $('form').trigger('reset')
   store.user = data.user
+  $('#new-game').show()
+  $('#stats').show()
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 }
 
 const signInFail = function (data) {
@@ -35,6 +42,15 @@ const signOutSuccess = function (data) {
   $('.user-message').text('Sign out success!')
   $('form').trigger('reset')
   store.user = null
+  $('#new-game').hide()
+  $('#stats').hide()
+  $('.container').hide()
+  $('.game-updates').hide()
+  $('.whose-turn').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
 }
 
 const signOutFail = function (data) {

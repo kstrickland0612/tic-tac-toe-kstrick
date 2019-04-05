@@ -5,7 +5,7 @@ const store = require('../store.js')
 
 // need to hide whose-turn when game is over
 
-// need to clear invalidMoveMessage
+// need to clear invalidMoveMessage once new move happens
 
 //  Signup and Signin must only be available to not signed in users.
 

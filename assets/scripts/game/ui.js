@@ -30,6 +30,9 @@ const createGameSuccess = function (response) {
   console.log('successfully created a new game: ', response)
   store.game = response.game
   console.log(store.game.id)
+  $('.container').show()
+  $('.game-updates').show()
+  $('.whose-turn').show()
 }
 
 const createGameFail = function (response) {

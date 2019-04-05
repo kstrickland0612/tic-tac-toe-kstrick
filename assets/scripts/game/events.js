@@ -22,8 +22,11 @@ const onGetGames = function (event) {
 }
 
 const addHandlers = function () {
-  $('#new-game').on('click', newGame)
-  $('#stats').on('click', onGetGames)
+  $('#new-game').on('click', newGame).hide()
+  $('#stats').on('click', onGetGames).hide()
+  $('.container').hide()
+  $('.game-updates').hide()
+  $('.whose-turn').hide()
 }
 
 module.exports = {
