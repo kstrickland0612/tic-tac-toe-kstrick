@@ -1,6 +1,5 @@
 const config = require('../config.js')
 const store = require('../store.js')
-const engine = require('./engine.js')
 
 const createGame = function () {
   return $.ajax({
@@ -22,10 +21,10 @@ const updateGame = function () {
     data: {
       'game': {
         'cell': {
-          'index': store.winner,
+          'index': store.boxNum,
           'value': store.currentPlayer
         },
-        'over': false
+        'over': store.gameStatus
       }
     }
   })

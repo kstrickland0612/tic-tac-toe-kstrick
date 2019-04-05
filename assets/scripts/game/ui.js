@@ -29,6 +29,7 @@ const draw = function () {
 const createGameSuccess = function (response) {
   console.log('successfully created a new game: ', response)
   store.game = response.game
+  console.log(store.game.id)
 }
 
 const createGameFail = function (response) {
