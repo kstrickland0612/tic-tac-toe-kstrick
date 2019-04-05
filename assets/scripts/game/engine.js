@@ -1,4 +1,5 @@
 // const api = require('./api.js')
+const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 
@@ -87,6 +88,9 @@ const updateBox = function () {
     checkForWin(currentBoard)
     checkForDraw(currentBoard)
     switchPlayer()
+    api.updateGame()
+      .then(ui.updateGameSuccess)
+      .catch(ui.updateGameFail)
     ui.turnChange()
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
@@ -94,6 +98,9 @@ const updateBox = function () {
     checkForWin(currentBoard)
     checkForDraw(currentBoard)
     switchPlayer()
+    api.updateGame()
+      .then(ui.updateGameSuccess)
+      .catch(ui.updateGameFail)
     ui.turnChange()
   } else {
     ui.invalidMoveMessage()

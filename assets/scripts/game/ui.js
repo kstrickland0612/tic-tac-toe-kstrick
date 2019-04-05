@@ -28,10 +28,19 @@ const draw = function () {
 
 const createGameSuccess = function (response) {
   console.log('successfully created a new game: ', response)
+  store.game = response.game
 }
 
 const createGameFail = function (response) {
   console.log('failed to create new game: ', response)
+}
+
+const updateGameSuccess = function (response) {
+  console.log('successfully updated the game: ', response)
+}
+
+const updateGameFail = function (response) {
+  console.log('failed to update the game: ', response)
 }
 
 module.exports = {
@@ -41,5 +50,7 @@ module.exports = {
   winnerWinner,
   draw,
   createGameSuccess,
-  createGameFail
+  createGameFail,
+  updateGameSuccess,
+  updateGameFail
 }
