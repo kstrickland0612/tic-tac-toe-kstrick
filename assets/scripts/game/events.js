@@ -1,7 +1,5 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('../store.js')
-const engine = require('./engine.js')
 
 // Create Game, start new game (curl then web app)
 // Update Game, play the game (curl then web app)
@@ -13,12 +11,19 @@ const newGame = function (event) {
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFail)
+}
 
-// need to have function to wipe the gameboard clean happen here
+const onGetGames = function (event) {
+  event.preventDefault()
+
+  api.getGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFail)
 }
 
 const addHandlers = function () {
   $('#new-game').on('click', newGame)
+  $('#stats').on('click', onGetGames)
 }
 
 module.exports = {

@@ -44,6 +44,14 @@ const updateGameFail = function (response) {
   console.log('failed to update the game: ', response)
 }
 
+const getGamesSuccess = function (response) {
+  console.log('successfully got this game data: ', response)
+}
+
+const getGamesFail = function (response) {
+  console.log('failed to get this game data: ', response)
+}
+
 module.exports = {
   invalidMoveMessage,
   gameOverMessage,
@@ -53,5 +61,7 @@ module.exports = {
   createGameSuccess,
   createGameFail,
   updateGameSuccess,
-  updateGameFail
+  updateGameFail,
+  getGamesSuccess,
+  getGamesFail
 }
