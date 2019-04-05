@@ -13,6 +13,8 @@ const newGame = function (event) {
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFail)
+
+// need to have function to wipe the gameboard clean happen here
 }
 
 const addHandlers = function () {

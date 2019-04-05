@@ -126,8 +126,13 @@ const updateBox = function () {
   }
 }
 
+const resetBoard = function (currentBoard) {
+  $('.box').html('')
+}
+
 const addHandlers = function () {
   $('.box').on('click', updateBox)
+  $('#new-game').on('click', resetBoard)
 }
 
 module.exports = {
