@@ -1,20 +1,72 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'typography';
+
+.not-game-board {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin: 30px;
+  background-color: $white;
+}
+
+section.sign-in-container {
+  align-items: left;
+  padding: 10px 50px 30px;
+  width: 40%;
+}
+
+section.gameboard {
+  margin: 100px;
+}
+
+fieldset {
+  border: 1px groove;
+  padding: 0 1.4em 1.4em 1.4em;
+  margin: 0 0 1.5em 0;
+}
+
+legend {
+  width: inherit;
+  padding: 0 10px;
+  border-bottom: none;
+}
+
+.form-control {
+  margin: 5px;
+}
+
+.btn {
+  margin: 5px;
+  font-weight: bold;
+}
 
 .box {
   border: 2px solid $black;
   height: 150px;
   width: 100px;
+  padding-top: 30px;
   text-align: center;
+  text-shadow: 1px 1px 2px;
   font-size: 50px;
-  background-color: $green;
 }
 
-header,
+h1,
 footer,
+legend,
+.btn,
 .user-message,
 .game-updates,
 .whose-turn,
 .user-stats,
 .container {
   font-family: 'Major Mono Display', monospace;
+}
+
+footer {
+  position: fixed;
+  bottom: 8px;
+  right: 16px;
 }

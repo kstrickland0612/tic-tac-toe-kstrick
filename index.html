@@ -12,56 +12,56 @@
     </head>
 
     <body>
-      <style>
-      @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
-      </style>
+      <section class="not-game-board">
+        <header>
+          <h1>TIC-TAC-TOE</h1>
+          <section>
+              <form id="change-password">
+                <input type="password" name="passwords[old]" placeholder="old password">
+                <input type="password" name="passwords[new]" placeholder="new password">
+                <input type="submit" value="Change Password!">
+              </form>
+          </section>
+        </header>
 
-      <header>
-        <h1>TIC-TAC-TOE</h1>
-
-
-      </header>
-      <main>
         <div class="user-message"></div>
-          <form id="sign-up">
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-            <input type="submit" value="Sign Up!">
+
+        <section class="sign-in-container">
+
+          <form class="auth-form" id="sign-up">
+            <fieldset>
+              <legend>Sign Up</legend>
+              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+              <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+              <button type="submit" class="btn btn-primary">sign up</button>
+            </fieldset>
           </form>
-          <br>
-          <form id="sign-in">
-            <input type="email" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="submit" value="Sign In!">
+        </section>
+
+        <section class="sign-in-container">
+
+          <form class="auth-form" id="sign-in">
+            <fieldset>
+              <legend>Sign In</legend>
+              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+              <button type="submit" class="btn btn-primary">sign in</button>
+            </fieldset>
           </form>
-          <br>
-          <form id="change-password">
-            <input type="password" name="passwords[old]" placeholder="old password">
-            <input type="password" name="passwords[new]" placeholder="new password">
-            <input type="submit" value="Change Password!">
-          </form>
-          <br>
-          <form id="sign-out">
-            <input type="submit" value="Sign out!">
-          </form>
-        <br>
+        </section>
+      </section>
+
       <!-- GAME UPDATES -->
         <div class="game-updates"></div>
         <div class="whose-turn">X's turn!</div>
       <br>
       <!-- GAME BOARD -->
-      <form id="new-game">
-        <input type="submit" value="New Game!">
-      </form>
-      <form id="stats">
-        <input type="submit" value="Stats">
-      </form>
-      <div class="user-stats"></div>
+    <section class="gameboard">
 
       <div class="container">
 
-          <div class="gameboard">
+          <div class="game-board">
             <div class="row">
               <div class="col-4 col-md-2 box left-top" data-id='0'></div>
               <div class="col-4 col-md-2 box right-top" data-id='1'></div>
@@ -80,9 +80,17 @@
           </div>
         </div>
 
-        <br>
-
-      </main>
+        <form id="new-game">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">New Game</button>
+        </form>
+        <form id="stats">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Stats</button>
+        </form>
+        <div class="user-stats"></div>
+        <form id="sign-out">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign out</button>
+        </form>
+    </section>
 
       <footer>
         <p>CREATED BY k STRICKLAND</p>
