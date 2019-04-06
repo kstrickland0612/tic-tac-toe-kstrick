@@ -1,9 +1,6 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
-
-// Create Game, start new game (curl then web app)
-// Update Game, play the game (curl then web app)
-// Get Games (curl then web app)
+const store = require('../store.js')
 
 const newGame = function (event) {
   event.preventDefault()

@@ -5,9 +5,16 @@
   height: 150px;
   width: 100px;
   text-align: center;
+  font-size: 50px;
   background-color: $green;
 }
 
-aside {
-  border: 1px solid $black;
+header,
+footer,
+.user-message,
+.game-updates,
+.whose-turn,
+.user-stats,
+.container {
+  font-family: 'Major Mono Display', monospace;
 }

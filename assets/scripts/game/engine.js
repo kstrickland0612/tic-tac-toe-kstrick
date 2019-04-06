@@ -7,67 +7,63 @@ const store = require('../store.js')
 
 // need to clear invalidMoveMessage once new move happens
 
-//  Signup and Signin must only be available to not signed in users.
-
-//  Logout and Change password must only be available to signed in users.
-
-const currentBoard = ['', '', '', '', '', '', '', '', '']
+let currentBoard = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'x'
 let winner = ''
 let gameOver = false
 
-const whoWon = function () {
-  return winner
-}
-
-const whoIsCurrentPlayer = function () {
-  return currentPlayer
-}
-
-const checkForWin = function (currentBoard) {
-  if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') || (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
+const checkForWin = function () {
+  if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') ||
+   (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
     winner = currentBoard[0]
     gameOver = true
     store.gameStatus = gameOver
     store.winner = winner
     ui.winnerWinner()
-  } else if ((currentBoard[3] === 'x' && currentBoard[4] === 'x' && currentBoard[5] === 'x') || (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
+  } else if ((currentBoard[3] === 'x' && currentBoard[4] === 'x' && currentBoard[5] === 'x') ||
+   (currentBoard[3] === 'o' && currentBoard[4] === 'o' && currentBoard[5] === 'o')) {
     winner = currentBoard[3]
     gameOver = true
     store.gameStatus = gameOver
     store.winner = winner
     ui.winnerWinner()
-  } else if ((currentBoard[6] === 'x' && currentBoard[7] === 'x' && currentBoard[8] === 'x') || (currentBoard[6] === 'o' && currentBoard[7] === 'o' && currentBoard[8] === 'o')) {
+  } else if ((currentBoard[6] === 'x' && currentBoard[7] === 'x' && currentBoard[8] === 'x') ||
+   (currentBoard[6] === 'o' && currentBoard[7] === 'o' && currentBoard[8] === 'o')) {
     winner = currentBoard[6]
     gameOver = true
     store.gameStatus = gameOver
     store.winner = winner
     ui.winnerWinner()
-  } else if ((currentBoard[0] === 'x' && currentBoard[4] === 'x' && currentBoard[8] === 'x') || (currentBoard[0] === 'o' && currentBoard[4] === 'o' && currentBoard[8] === 'o')) {
+  } else if ((currentBoard[0] === 'x' && currentBoard[4] === 'x' && currentBoard[8] === 'x') ||
+   (currentBoard[0] === 'o' && currentBoard[4] === 'o' && currentBoard[8] === 'o')) {
     winner = currentBoard[0]
     gameOver = true
     store.gameStatus = gameOver
     store.winner = winner
     ui.winnerWinner()
-  } else if ((currentBoard[0] === 'x' && currentBoard[3] === 'x' && currentBoard[6] === 'x') || (currentBoard[0] === 'o' && currentBoard[3] === 'o' && currentBoard[6] === 'o')) {
+  } else if ((currentBoard[0] === 'x' && currentBoard[3] === 'x' && currentBoard[6] === 'x') ||
+   (currentBoard[0] === 'o' && currentBoard[3] === 'o' && currentBoard[6] === 'o')) {
     winner = currentBoard[0]
     gameOver = true
     store.gameStatus = gameOver
     store.winner = winner
     ui.winnerWinner()
-  } else if ((currentBoard[1] === 'x' && currentBoard[4] === 'x' && currentBoard[7] === 'x') || (currentBoard[1] === 'o' && currentBoard[4] === 'o' && currentBoard[7] === 'o')) {
+  } else if ((currentBoard[1] === 'x' && currentBoard[4] === 'x' && currentBoard[7] === 'x') ||
+   (currentBoard[1] === 'o' && currentBoard[4] === 'o' && currentBoard[7] === 'o')) {
     winner = currentBoard[1]
     gameOver = true
     store.gameStatus = gameOver
     store.winner = winner
     ui.winnerWinner()
-  } else if ((currentBoard[2] === 'x' && currentBoard[5] === 'x' && currentBoard[8] === 'x') || (currentBoard[2] === 'o' && currentBoard[5] === 'o' && currentBoard[8] === 'o')) {
+  } else if ((currentBoard[2] === 'x' && currentBoard[5] === 'x' && currentBoard[8] === 'x') ||
+   (currentBoard[2] === 'o' && currentBoard[5] === 'o' && currentBoard[8] === 'o')) {
     winner = currentBoard[2]
     gameOver = true
     store.gameStatus = gameOver
     store.winner = winner
     ui.winnerWinner()
-  } else if ((currentBoard[2] === 'x' && currentBoard[4] === 'x' && currentBoard[6] === 'x') || (currentBoard[2] === 'o' && currentBoard[4] === 'o' && currentBoard[6] === 'o')) {
+  } else if ((currentBoard[2] === 'x' && currentBoard[4] === 'x' && currentBoard[6] === 'x') ||
+   (currentBoard[2] === 'o' && currentBoard[4] === 'o' && currentBoard[6] === 'o')) {
     winner = currentBoard[2]
     gameOver = true
     store.gameStatus = gameOver
@@ -104,8 +100,8 @@ const updateBox = function () {
     $(event.target).text(currentPlayer)
     currentBoard[boxNum] = currentPlayer
     store.currentPlayer = currentPlayer
-    checkForWin(currentBoard)
     checkForDraw(currentBoard)
+    checkForWin(currentBoard)
     api.updateGame()
       .then(ui.updateGameSuccess)
       .catch(ui.updateGameFail)
@@ -114,8 +110,8 @@ const updateBox = function () {
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     currentBoard[boxNum] = currentPlayer
-    checkForWin(currentBoard)
     checkForDraw(currentBoard)
+    checkForWin(currentBoard)
     api.updateGame()
       .then(ui.updateGameSuccess)
       .catch(ui.updateGameFail)
@@ -126,8 +122,11 @@ const updateBox = function () {
   }
 }
 
-const resetBoard = function (currentBoard) {
+const resetBoard = function () {
   $('.box').html('')
+  currentBoard = ['', '', '', '', '', '', '', '', '']
+  gameOver = false
+  currentPlayer = 'x'
 }
 
 const addHandlers = function () {
@@ -136,7 +135,5 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers,
-  whoWon,
-  whoIsCurrentPlayer
+  addHandlers
 }
