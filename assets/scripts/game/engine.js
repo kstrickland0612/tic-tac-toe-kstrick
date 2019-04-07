@@ -100,6 +100,7 @@ const switchPlayer = function () {
 }
 
 const updateBox = function () {
+  $('.game-updates').text('')
   const content = $(event.target).text()
   const boxNum = $(event.target).data('id')
   store.boxNum = boxNum
