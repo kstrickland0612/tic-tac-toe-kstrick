@@ -7,13 +7,12 @@ let oGamesWin = 0
 
 const winnerWinner = function () {
   $('.game-updates').text('Game over! ' + store.winner + ' wins!')
+  $('.whose-turn').hide()
   if (store.winner === 'x') {
     xGamesWin++
-    console.log(xGamesWin)
   }
   if (store.winner === 'o') {
     oGamesWin++
-    console.log(oGamesWin)
   }
 }
 
@@ -26,11 +25,13 @@ const invalidMoveMessage = function () {
 }
 
 const gameOverMessage = function () {
-  $('.game-updates').text('Game Over! Click New Game to play again.')
+  $('.game-updates').text('Game over! Click New Game to play again.')
+  $('whose-turn').hide()
 }
 
 const draw = function () {
   $('.game-updates').text('Game over! It\'s a draw!')
+  $('whose-turn').hide()
 }
 
 // GAME API STUFF
@@ -39,8 +40,9 @@ const createGameSuccess = function (response) {
   console.log('successfully created a new game: ', response)
   store.game = response.game
   $('.container').show()
-  $('.game-updates').show()
-  $('.whose-turn').show()
+  $('.whose-turn').text('x\'s turn!').show()
+  $('.user-message').text('')
+  $('.game-updates').text('')
 }
 
 const createGameFail = function (response) {

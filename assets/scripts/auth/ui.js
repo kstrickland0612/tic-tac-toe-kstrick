@@ -4,6 +4,7 @@ const signUpSuccess = function (data) {
   $('.user-message').text('Sign up success!')
   $('form').trigger('reset')
   $('#sign-up').hide()
+  $('#sign-in').show()
 }
 
 const signUpFail = function (data) {
@@ -17,7 +18,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('#new-game').show()
   $('#stats').show()
-  $('#change-password').show()
+  $('.change-password-button').show()
   $('#sign-out').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
@@ -29,12 +30,12 @@ const signInFail = function (data) {
 }
 
 const changePwSuccess = function (data) {
-  $('.user-message').text('Change password success!')
+  $('.changepw-message').text('Change password success!')
   $('form').trigger('reset')
 }
 
 const changePwFail = function (data) {
-  $('.user-message').text('Change password failed, please try again.')
+  $('.changepw-message').text('Change password failed, please try again.')
   $('form').trigger('reset')
 }
 
@@ -47,10 +48,9 @@ const signOutSuccess = function (data) {
   $('.container').hide()
   $('.game-updates').hide()
   $('.whose-turn').hide()
-  $('#change-password').hide()
   $('#sign-out').hide()
-  $('#sign-up').show()
   $('#sign-in').show()
+  $('.change-password-button').hide()
 }
 
 const signOutFail = function (data) {

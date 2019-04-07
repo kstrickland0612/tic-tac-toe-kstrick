@@ -37,11 +37,25 @@ const onSignOut = function (event) {
     .catch(ui.signOutFail)
 }
 
+const onNeedToSignUp = function (event) {
+  $('#sign-up').hide()
+  $('#sign-in').show()
+}
+
+const onNeedToSignIn = function (event) {
+  $('#sign-in').hide()
+  $('#sign-up').show()
+}
+
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword).hide()
+  $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut).hide()
+  $('.change-password-button').hide()
+  $('#sign-in').hide()
+  $('.sign-in-link').on('click', onNeedToSignUp)
+  $('.sign-up-link').on('click', onNeedToSignIn)
 }
 
 module.exports = {

@@ -12,6 +12,13 @@ let currentPlayer = 'x'
 let winner = ''
 let gameOver = false
 
+const resetBoard = function () {
+  $('.box').html('')
+  currentBoard = ['', '', '', '', '', '', '', '', '']
+  gameOver = false
+  currentPlayer = 'x'
+}
+
 const checkForWin = function () {
   if ((currentBoard[0] === 'x' && currentBoard[1] === 'x' && currentBoard[2] === 'x') ||
    (currentBoard[0] === 'o' && currentBoard[1] === 'o' && currentBoard[2] === 'o')) {
@@ -84,9 +91,11 @@ const switchPlayer = function () {
   if (currentPlayer === 'x') {
     currentPlayer = 'o'
     store.currentPlayer = currentPlayer
+    ui.turnChange()
   } else {
     currentPlayer = 'x'
     store.currentPlayer = currentPlayer
+    ui.turnChange()
   }
 }
 
@@ -99,14 +108,12 @@ const updateBox = function () {
   } else if (content === '' && currentPlayer === 'x') {
     $(event.target).text(currentPlayer)
     currentBoard[boxNum] = currentPlayer
-    store.currentPlayer = currentPlayer
     checkForDraw(currentBoard)
     checkForWin(currentBoard)
     api.updateGame()
       .then(ui.updateGameSuccess)
       .catch(ui.updateGameFail)
     switchPlayer()
-    ui.turnChange()
   } else if (content === '' && currentPlayer === 'o') {
     $(event.target).text(currentPlayer)
     currentBoard[boxNum] = currentPlayer
@@ -116,17 +123,9 @@ const updateBox = function () {
       .then(ui.updateGameSuccess)
       .catch(ui.updateGameFail)
     switchPlayer()
-    ui.turnChange()
   } else {
     ui.invalidMoveMessage()
   }
-}
-
-const resetBoard = function () {
-  $('.box').html('')
-  currentBoard = ['', '', '', '', '', '', '', '', '']
-  gameOver = false
-  currentPlayer = 'x'
 }
 
 const addHandlers = function () {

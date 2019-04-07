@@ -1,6 +1,5 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('../store.js')
 
 const newGame = function (event) {
   event.preventDefault()
@@ -22,7 +21,6 @@ const addHandlers = function () {
   $('#new-game').on('click', newGame).hide()
   $('#stats').on('click', onGetGames).hide()
   $('.container').hide()
-  $('.game-updates').hide()
   $('.whose-turn').hide()
 }
 

@@ -12,89 +12,125 @@
     </head>
 
     <body>
-      <section class="not-game-board">
-        <header>
-          <h1>TIC-TAC-TOE</h1>
-          <section>
-              <form id="change-password">
-                <input type="password" name="passwords[old]" placeholder="old password">
-                <input type="password" name="passwords[new]" placeholder="new password">
-                <input type="submit" value="Change Password!">
-              </form>
-          </section>
-        </header>
+      <h1>TIC-TAC-TOE</h1>
 
-        <div class="user-message"></div>
+      <div class="user-message"></div>
 
-        <section class="sign-in-container">
+      <section class="buttons">
 
-          <form class="auth-form" id="sign-up">
-            <fieldset>
-              <legend>Sign Up</legend>
-              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-              <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-              <button type="submit" class="btn btn-primary">sign up</button>
-            </fieldset>
-          </form>
-        </section>
+        <!-- Change Password Button -->
 
-        <section class="sign-in-container">
+        <button type="button" class="btn btn-primary change-password-button" data-toggle="modal" data-target="#changePW">
+          Change Password
+        </button>
 
-          <form class="auth-form" id="sign-in">
-            <fieldset>
-              <legend>Sign In</legend>
-              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-              <button type="submit" class="btn btn-primary">sign in</button>
-            </fieldset>
-          </form>
-        </section>
-      </section>
+        <!-- Change Password Modal -->
 
-      <!-- GAME UPDATES -->
-        <div class="game-updates"></div>
-        <div class="whose-turn">x's turn!</div>
-      <br>
-      <!-- GAME BOARD -->
-    <section class="gameboard">
+        <div class="modal fade" id="changePW" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
 
-      <div class="container">
-
-          <div class="game-board">
-            <div class="row">
-              <div class="col-4 col-md-2 box left-top" data-id='0'></div>
-              <div class="col-4 col-md-2 box right-top" data-id='1'></div>
-              <div class="col-4 col-md-2 box middle-top" data-id='2'></div>
-            </div>
-            <div class="row">
-              <div class="col-4 col-md-2 box left-middle" data-id='3'></div>
-              <div class="col-4 col-md-2 box center-middle" data-id='4'></div>
-              <div class="col-4 col-md-2 box right-middle" data-id='5'></div>
-            </div>
-            <div class="row">
-              <div class="col-4 col-md-2 box left-bottom" data-id='6'></div>
-              <div class="col-4 col-md-2 box center-bottom" data-id='7'></div>
-              <div class="col-4 col-md-2 box right-bottom" data-id='8'></div>
+                <form id="change-password-form">
+                  <div class="changepw-message"></div>
+                  <input type="password" name="passwords[old]" placeholder="old password">
+                  <input type="password" name="passwords[new]" placeholder="new password">
+                  <input type="submit" class="btn btn-primary change-password-submit" value="Change Password">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <form id="new-game">
-          <button type="submit" class="btn btn-primary btn-lg btn-block">New Game</button>
+        <!-- Sign Out Button -->
+
+        <form id="sign-out">
+          <button type="submit" class="btn btn-primary">Sign out</button>
         </form>
+
+        <!-- New Game Button -->
+
+        <form id="new-game">
+          <button type="submit" class="btn btn-primary">New Game</button>
+        </form>
+
+        <!-- Stats Button -->
+
         <form id="stats">
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Stats</button>
+          <button type="submit" class="btn btn-primary">Stats</button>
         </form>
         <div class="user-stats"></div>
-        <form id="sign-out">
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign out</button>
+
+      </section>
+
+      <section class="sign-in-container">
+
+        <form class="auth-form" id="sign-up">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+            <button type="submit" class="btn btn-primary">sign up</button>
+            <p>Already have an account? <a class="sign-in-link" href="#">Click here to sign in</a>.</p>
+          </fieldset>
         </form>
+
+        <form class="auth-form" id="sign-in">
+          <fieldset>
+            <legend>Sign In</legend>
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            <button type="submit" class="btn btn-primary">sign in</button>
+            <p>Don't have an account? <a class="sign-up-link" href="#">Click here to sign up</a>.</p>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- GAME UPDATES -->
+
+    <section>
+        <div class="game-updates"></div>
+        <div class="whose-turn">x's turn!</div>
     </section>
 
-      <footer>
-        <p>CREATED BY k STRICKLAND</p>
-      </footer>
+      <!-- GAME BOARD -->
 
-    </body>
+    <section class="gameboard">
+
+      <div class="container">
+        <div class="game-board">
+          <div class="row">
+            <div class="col-4 col-md-2 box left-top" data-id='0'></div>
+            <div class="col-4 col-md-2 box right-top" data-id='1'></div>
+            <div class="col-4 col-md-2 box middle-top" data-id='2'></div>
+          </div>
+          <div class="row">
+            <div class="col-4 col-md-2 box left-middle" data-id='3'></div>
+            <div class="col-4 col-md-2 box center-middle" data-id='4'></div>
+            <div class="col-4 col-md-2 box right-middle" data-id='5'></div>
+          </div>
+          <div class="row">
+            <div class="col-4 col-md-2 box left-bottom" data-id='6'></div>
+            <div class="col-4 col-md-2 box center-bottom" data-id='7'></div>
+            <div class="col-4 col-md-2 box right-bottom" data-id='8'></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>CREATED BY k STRICKLAND</p>
+    </footer>
+
+  </body>
 </html>
