@@ -59,7 +59,7 @@ const updateGameFail = function (response) {
 
 const getGamesSuccess = function (response) {
   console.log('successfully got this game data: ', response)
-
+  $('.user-message').text('')
   let gamesPlayed = 0
 
   response.games.forEach((game) => {
