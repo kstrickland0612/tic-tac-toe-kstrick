@@ -2,8 +2,19 @@ const store = require('../store.js')
 
 // GAME PLAY MESSAGING
 
+let xGamesWin = 0
+let oGamesWin = 0
+
 const winnerWinner = function () {
   $('.game-updates').text('Game over! ' + store.winner + ' wins!')
+  if (store.winner === 'x') {
+    xGamesWin++
+    console.log(xGamesWin)
+  }
+  if (store.winner === 'o') {
+    oGamesWin++
+    console.log(oGamesWin)
+  }
 }
 
 const turnChange = function () {
@@ -46,11 +57,19 @@ const updateGameFail = function (response) {
 
 const getGamesSuccess = function (response) {
   console.log('successfully got this game data: ', response)
-  $('.user-stats').text(response)
+
+  let gamesPlayed = 0
+
+  response.games.forEach((game) => {
+    gamesPlayed++
+  })
+
+  $('.user-stats').html(`Games played (all-time): ${gamesPlayed}<p>x Wins (this session): ${xGamesWin}</p><p>o Wins (this session): ${oGamesWin}</p>`)
 }
 
 const getGamesFail = function (response) {
   console.log('failed to get this game data: ', response)
+  $('.user-stats').text('Sorry, unable to retrieve data.')
 }
 
 module.exports = {
