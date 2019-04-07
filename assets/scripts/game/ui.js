@@ -16,22 +16,22 @@ const winnerWinner = function () {
   }
 }
 
-const turnChange = function () {
-  $('.whose-turn').text(store.currentPlayer + '\'s turn!')
+const invalidMoveMessage = function () {
+  $('.game-updates').html(`Invalid move! `)
 }
 
-const invalidMoveMessage = function () {
-  $('.game-updates').text('Invalid move!')
+const turnChange = function () {
+  $('.whose-turn').text(`${store.currentPlayer}'s turn!`)
 }
 
 const gameOverMessage = function () {
   $('.game-updates').text('Game over! Click New Game to play again.')
-  $('whose-turn').hide()
+  $('.whose-turn').hide()
 }
 
 const draw = function () {
   $('.game-updates').text('Game over! It\'s a draw!')
-  $('whose-turn').hide()
+  $('.whose-turn').hide()
 }
 
 // GAME API STUFF
