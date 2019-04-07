@@ -19,7 +19,7 @@ const onGetGames = function (event) {
 
 const addHandlers = function () {
   $('#new-game').on('click', newGame).hide()
-  $('#stats').on('click', onGetGames).hide()
+  $('.stats').on('click', onGetGames).hide()
   $('.container').hide()
   $('.whose-turn').hide()
 }

@@ -17,7 +17,7 @@ const signInSuccess = function (data) {
   $('form').trigger('reset')
   store.user = data.user
   $('#new-game').show()
-  $('#stats').show()
+  $('.stats').show()
   $('.change-password-button').show()
   $('#sign-out').show()
   $('#sign-up').hide()
@@ -44,7 +44,7 @@ const signOutSuccess = function (data) {
   $('form').trigger('reset')
   store.user = null
   $('#new-game').hide()
-  $('#stats').hide()
+  $('.stats').hide()
   $('.container').hide()
   $('.game-updates').hide()
   $('.whose-turn').hide()

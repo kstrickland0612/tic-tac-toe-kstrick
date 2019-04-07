@@ -66,7 +66,7 @@ const getGamesSuccess = function (response) {
     gamesPlayed++
   })
 
-  $('.user-stats').html(`Games played (all-time): ${gamesPlayed}<p>x Wins (this session): ${xGamesWin}</p><p>o Wins (this session): ${oGamesWin}</p>`)
+  $('.user-stats').html(`<p>Games played (all-time): ${gamesPlayed}</p><p>x Wins (this session): ${xGamesWin}</p><p>o Wins (this session): ${oGamesWin}</p>`)
 }
 
 const getGamesFail = function (response) {
