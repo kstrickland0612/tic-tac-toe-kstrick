@@ -5,7 +5,7 @@ List unsolved problems which would be fixed in future iterations.
 Link to wireframes and user stories.
 -->
 
-# K Strickland Tic-Tac-Toe App
+# K Strickland's Tic-Tac-Toe App
 
 
 Welcome to my browser-based tic-tac-toe game, created during my time at General Asssembly's Software Engineering Immersive.
@@ -24,21 +24,48 @@ xoxo, K
 
 ## Moods
 
-- Day 1: OVERWHELM! How do I deploy? How do I do this smartly with version control? How to even go about this project? Alright, x's and o's, need a gameboard, need an array...
+- **Day 1**: OVERWHELM! How do I deploy? How do I do this smartly with version control? How to even go about this project? Alright, x's and o's, need a gameboard, need an array...
+
+
 ![nervous](./Anguished-Face-Emoji-small.png "anguish")
+
+
 ![deep in thought](./Thinking-Emoji-small.png "thinking very hard")
-- Day 2: Thought I was making progress. Got my gameboard working. But then came the API. Had to figure out how to store game data and pull it from the database. Guess I'll sit with the API docs for a while.
+
+
+- **Day 2**: Thought I was making progress. Got my gameboard working. But then came the API. Had to figure out how to store game data and pull it from the database. Guess I'll sit with the API docs for a while.
+
+
 ![panicked](./Flushed-Face-Emoji-small.png "panicking")
-- Day 3: Alright, feeling good. Sitting here drinking my morning tea, confidence and good vibes all around. My patch request is working. Going to spend a bit of time on styling now...wait...SOMETHING BROKE. Code no longer working. I'm distressed.
+
+
+- **Day 3**: Alright, feeling good. Sitting here drinking my morning tea, confidence and good vibes all around. My patch request is working. Going to spend a bit of time on styling now...wait...SOMETHING BROKE. Code no longer working. I'm distressed.
+
+
 ![relived](./Relieved-Emoji-small.png "relived")
+
+
 ![paniked](./Flushed-Face-Emoji-small.png "panicking again")
-- Day 4: Alright, everything's working again, emergency over. Things are coming together nicely. Going to look into the stretch goals. Chill.
+
+
+- **Day 4**: Alright, everything's working again, emergency over. Things are coming together nicely. Going to look into the stretch goals. Chill.
+
+
 ![relaxed](./Smiling-with-Sweat-Emoji-small.png "relaxed")
-- Day 5: Why CSS? Why? Realizing I don't like styling. Flexbox what?
+
+
+- **Day 5**: Why CSS? Why? Realizing I don't like styling. Flexbox what?
+
+
 ![welp](./Upside-Down-Face-Emoji-small.png "uuuh what?")
-- Day 6: Wow. I just built a browser-based game all on my own. After only 3 weeks of learning. MVP has been met, PLUS some cool extra stuff. I finally understand what I was building this entire past week. Nice. Feels good.
+
+
+- **Day 6**: Wow. I just built a browser-based game all on my own. After only 3 weeks of learning. MVP has been met, PLUS some cool extra stuff. I finally understand what I was building this entire past week. Nice. Feels good.
+
+
 ![very proud](./Woman-Hand-Gesture-Emoji-small.png "so proud")
 ![badass](./Smiling-Devil-Emoji-small.png "I can do anything")
+
 
 ## Technologies Used
 
@@ -63,7 +90,7 @@ I also mapped out my file structure before starting on the project. I wanted to 
 currentBoard[boxNum] = currentPlayer
 ```
 - PATCH request
-A very important part of this app is that games are stored in a database, and as you play the game in the browser, the game in the database must also be updated. To accomplish this, I used Ajax to send PATCH requests to the database. The database wants the data in a certain format:
+...A very important part of this app is that games are stored in a database, and as you play the game in the browser, the game in the database must also be updated. To accomplish this, I used Ajax to send PATCH requests to the database. The database wants the data in a certain format:
 ```JS
 {
   "game": {
@@ -75,11 +102,11 @@ A very important part of this app is that games are stored in a database, and as
   }
 }
 ```
-I was puzzling over how to get the correct data over to the database for a while. Eventually I remembered that store is a thing. Holding game data in an empty object upon game creation and game update makes that same game data easily available from any other file. As soon as I figured out how to use my store.js file, PATCH and all the other API calls became a walk in the park.
+...I was puzzling over how to get the correct data over to the database for a while. Eventually I remembered that store is a thing. Holding game data in an empty object upon game creation and game update makes that same game data easily available from any other file. As soon as I figured out how to use my store.js file, PATCH and all the other API calls became a walk in the park.
 
 - Global scope vs. local scope
 
-I ran into a few issues with global vs. local scope. Some of my variables were clashing. I'm still learning the ins and outs of this phenomenon, and I'm finding learning by doing (and messing up!) is teaching me way more than reading about how these scopes work in theory.
+...I ran into a few issues with global vs. local scope. Some of my variables were clashing. I'm still learning the ins and outs of this phenomenon, and I'm finding learning by doing (and messing up!) is teaching me way more than reading about how these scopes work in theory.
 
 - Layout
 ...Let's face it, I'm not a natural CSS wizard. I'm learning though!
@@ -129,4 +156,4 @@ The extra features user stories above lay out the things I'm most interested in 
 
 I did complete user story 12, which allowed me to pull how many games X won and 0 won during the signed-in user's current session.
 
-I'm very interested in web accessibility. I case about making the web work for everyone. User story 13 is all about making this app fully accessible to screen readers/voiceover in particular. I did not have time to complete this story, but this is something I have on the top of my mind. 
+I'm very interested in web accessibility. I case about making the web work for everyone. User story 13 is all about making this app fully accessible to screen readers/voiceover in particular. I did not have time to complete this story, but this is something I have on the top of my mind.
