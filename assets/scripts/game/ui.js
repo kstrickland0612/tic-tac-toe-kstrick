@@ -41,7 +41,7 @@ const createGameSuccess = function (response) {
   $('.container').show()
   $('.whose-turn').text('x\'s turn!').show()
   $('.user-message').text('')
-  $('.game-updates').text('')
+  $('.game-updates').text('').show()
 }
 
 const createGameFail = function (response) {
