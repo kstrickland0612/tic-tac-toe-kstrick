@@ -74,14 +74,14 @@ I also mapped out my file structure before starting on the project. I wanted to 
 ## Challenges
 
 - **Getting index and value into an empty array**
-...The first major problem I had was getting my X's and O's to actually get added to my JavaScript gameboard, which I set up as an empty array. I eventually figured this out thanks to one of my fellow developers chatting it out with me (thanks, Nate!). I'd been trying to user .push() to get muy indexes and values into the array, which I'm sure would have worked if I'd done it right. However, I was able to accomplish the same thing by setting up a variable for my box number's ID (the one that was clicked), and for the text content in that box (an X or an O), and adding the data to my gameboard array like this:
+The first major problem I had was getting my X's and O's to actually get added to my JavaScript gameboard, which I set up as an empty array. I eventually figured this out thanks to one of my fellow developers chatting it out with me (thanks, Nate!). I'd been trying to user .push() to get muy indexes and values into the array, which I'm sure would have worked if I'd done it right. However, I was able to accomplish the same thing by setting up a variable for my box number's ID (the one that was clicked), and for the text content in that box (an X or an O), and adding the data to my gameboard array like this:
 
 ```JS
 currentBoard[boxNum] = currentPlayer
 ```
 
 - **PATCH request**
-...A very important part of this app is that games are stored in a database, and as you play the game in the browser, the game in the database must also be updated. To accomplish this, I used Ajax to send PATCH requests to the database. The database wants the data in a certain format:
+A very important part of this app is that games are stored in a database, and as you play the game in the browser, the game in the database must also be updated. To accomplish this, I used Ajax to send PATCH requests to the database. The database wants the data in a certain format:
 
 ```JS
 {
@@ -95,14 +95,13 @@ currentBoard[boxNum] = currentPlayer
 }
 ```
 
-...I was puzzling over how to get the correct data over to the database for a while. Eventually I remembered that store is a thing. Holding game data in an empty object upon game creation and game update makes that same game data easily available from any other file. As soon as I figured out how to use my store.js file, PATCH and all the other API calls became a walk in the park.
+I was puzzling over how to get the correct data over to the database for a while. Eventually I remembered that store is a thing. Holding game data in an empty object upon game creation and game update makes that same game data easily available from any other file. As soon as I figured out how to use my store.js file, PATCH and all the other API calls became a walk in the park.
 
 - **Global scope vs. local scope**
-
-...I ran into a few issues with global vs. local scope. Some of my variables were clashing. I'm still learning the ins and outs of this phenomenon, and I'm finding learning by doing (and messing up!) is teaching me way more than reading about how these scopes work in theory.
+I ran into a few issues with global vs. local scope. Some of my variables were clashing. I'm still learning the ins and outs of this phenomenon, and I'm finding learning by doing (and messing up!) is teaching me way more than reading about how these scopes work in theory.
 
 - **Layout**
-...Let's face it, I'm not a natural CSS wizard. I'm learning though!
+Let's face it, I'm not a natural CSS wizard. I'm learning though!
 
 ### Wireframes
 
