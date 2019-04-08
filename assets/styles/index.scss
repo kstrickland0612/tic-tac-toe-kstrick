@@ -1,7 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'typography';
 
-
 h1 {
   display: flex;
   justify-content: center;
@@ -44,6 +43,11 @@ h1 {
   width: 100px;
 }
 
+.box:hover {
+  background-color: $blue;
+  opacity: .5;
+}
+
 h1,
 footer,
 legend,
@@ -64,6 +68,7 @@ legend,
 
 footer {
   bottom: 8px;
-  position: absolute;
+  display: block;
+  position: fixed;
   right: 16px;
 }
