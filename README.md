@@ -1,16 +1,9 @@
-<!--
-List technologies used
-Document your planning and tell a story about your development process and problem-solving strategy.
-List unsolved problems which would be fixed in future iterations.
-Link to wireframes and user stories.
--->
-
 # K Strickland's Tic-Tac-Toe App
 
 
 Welcome to my browser-based tic-tac-toe game, created during my time at General Asssembly's Software Engineering Immersive.
 
-This project means a lot to me. Three weeks ago I wouldn't have kown where to even start building a browser-based game. Through this project I've gained a better understanding of the potential behind everything I've been learning these past few weeks, and I was able to put the up-in-the-air conceptual stuff into practice.
+This project means a lot to me. Three weeks ago I wouldn't have kown where to even start building a browser-based game. Through this project I've gained a better understanding of the potential behind everything I've been learning these past few weeks, and I was able to put conceptual things (that didn't make too much sense just sitting in my head) into practice.
 
 I held a lot of apprehension coming into this project. I'd been struggling through Codewars challenges on higher order functions and array iteration methods. I thought, "if I'm struggling with this super narrow scope of things, how am I going to build a fully functional app?".
 
@@ -28,8 +21,6 @@ xoxo, K
 
 
 ![nervous](./Anguished-Face-Emoji-small.png "anguish")
-
-
 ![deep in thought](./Thinking-Emoji-small.png "thinking very hard")
 
 
@@ -39,12 +30,10 @@ xoxo, K
 ![panicked](./Flushed-Face-Emoji-small.png "panicking")
 
 
-- **Day 3**: Alright, feeling good. Sitting here drinking my morning tea, confidence and good vibes all around. My patch request is working. Going to spend a bit of time on styling now...wait...SOMETHING BROKE. Code no longer working. I'm distressed.
+- **Day 3**: Alright, feeling good. Sitting here drinking my morning tea, confidence and good vibes all around. My PATCH request is working. Going to spend a bit of time on styling now...wait...SOMETHING BROKE. Code no longer working. I'm distressed.
 
 
 ![relived](./Relieved-Emoji-small.png "relived")
-
-
 ![paniked](./Flushed-Face-Emoji-small.png "panicking again")
 
 
@@ -78,19 +67,22 @@ xoxo, K
 
 ## Planning
 
-Before starting this project, I dived into the requirement documentation to make sure I had a good understanding of MVP (minimim viable product) and project scope. GA also provided some very helpful API documentation since they gave us a premade Heroku API to work with. I took a lot of time up front to read through the API documentation to understand the format of data that the API would need.
+Before starting this project, I dived into the requirement documentation to make sure I had a good understanding of MVP (minimim viable product) and project scope. GA also provided some very helpful API documentation since they gave us a premade Heroku API to work with. I took a lot of time up front to read through the API documentation and to understand the format of data that the API would need.
 
 I also mapped out my file structure before starting on the project. I wanted to make sure that I kept things modular so that maintaining the code would be straightforward and that the code would be easy for others to understand, especially for folks in my cohort.
 
 ## Challenges
 
-- Getting index and value into an empty array
+- **Getting index and value into an empty array**
 ...The first major problem I had was getting my X's and O's to actually get added to my JavaScript gameboard, which I set up as an empty array. I eventually figured this out thanks to one of my fellow developers chatting it out with me (thanks, Nate!). I'd been trying to user .push() to get muy indexes and values into the array, which I'm sure would have worked if I'd done it right. However, I was able to accomplish the same thing by setting up a variable for my box number's ID (the one that was clicked), and for the text content in that box (an X or an O), and adding the data to my gameboard array like this:
+
 ```JS
 currentBoard[boxNum] = currentPlayer
 ```
-- PATCH request
+
+- **PATCH request**
 ...A very important part of this app is that games are stored in a database, and as you play the game in the browser, the game in the database must also be updated. To accomplish this, I used Ajax to send PATCH requests to the database. The database wants the data in a certain format:
+
 ```JS
 {
   "game": {
@@ -102,13 +94,14 @@ currentBoard[boxNum] = currentPlayer
   }
 }
 ```
+
 ...I was puzzling over how to get the correct data over to the database for a while. Eventually I remembered that store is a thing. Holding game data in an empty object upon game creation and game update makes that same game data easily available from any other file. As soon as I figured out how to use my store.js file, PATCH and all the other API calls became a walk in the park.
 
-- Global scope vs. local scope
+- **Global scope vs. local scope**
 
 ...I ran into a few issues with global vs. local scope. Some of my variables were clashing. I'm still learning the ins and outs of this phenomenon, and I'm finding learning by doing (and messing up!) is teaching me way more than reading about how these scopes work in theory.
 
-- Layout
+- **Layout**
 ...Let's face it, I'm not a natural CSS wizard. I'm learning though!
 
 ### Wireframes
@@ -157,3 +150,7 @@ The extra features user stories above lay out the things I'm most interested in 
 I did complete user story 12, which allowed me to pull how many games X won and 0 won during the signed-in user's current session.
 
 I'm very interested in web accessibility. I case about making the web work for everyone. User story 13 is all about making this app fully accessible to screen readers/voiceover in particular. I did not have time to complete this story, but this is something I have on the top of my mind.
+
+## Wanna try it?
+
+[You can play my tic-tac-toe game here!](https://kstrickland0612.github.io/tic-tac-toe-kstrick/)
