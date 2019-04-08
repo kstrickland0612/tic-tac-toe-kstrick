@@ -2,17 +2,17 @@ const store = require('../store.js')
 
 // GAME PLAY MESSAGING
 
-let xGamesWin = 0
-let oGamesWin = 0
+store.xGamesWin = 0
+store.oGamesWin = 0
 
 const winnerWinner = function () {
   $('.game-updates').text('Game over! ' + store.winner + ' wins!')
   $('.whose-turn').hide()
   if (store.winner === 'x') {
-    xGamesWin++
+    store.xGamesWin++
   }
   if (store.winner === 'o') {
-    oGamesWin++
+    store.oGamesWin++
   }
 }
 
@@ -64,7 +64,7 @@ const getGamesSuccess = function (response) {
     gamesPlayed++
   })
 
-  $('.user-stats').html(`<p>Games played (all-time): ${gamesPlayed}</p><p>x Wins (this session): ${xGamesWin}</p><p>o Wins (this session): ${oGamesWin}</p>`)
+  $('.user-stats').html(`<p>Games played (all-time): ${gamesPlayed}</p><p>x Wins (this session): ${store.xGamesWin}</p><p>o Wins (this session): ${store.oGamesWin}</p>`)
 }
 
 const getGamesFail = function (response) {

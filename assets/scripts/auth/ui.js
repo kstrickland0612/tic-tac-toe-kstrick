@@ -51,6 +51,8 @@ const signOutSuccess = function (data) {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('.change-password-button').hide()
+  store.oGamesWin = 0
+  store.xGamesWin = 0
 }
 
 const signOutFail = function (data) {

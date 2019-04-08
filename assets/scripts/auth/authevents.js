@@ -49,6 +49,7 @@ const onNeedToSignIn = function (event) {
 
 const clearUserMessages = function (event) {
   $('.user-message').text('')
+  $('.changepw-message').text('')
 }
 
 const addHandlers = function () {
