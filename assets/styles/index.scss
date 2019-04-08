@@ -7,8 +7,10 @@ h1 {
 }
 
 .sign-in-container {
-  padding: 10px 50px 30px;
-  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 
   fieldset {
     border: 1px groove;
@@ -67,8 +69,6 @@ legend,
 }
 
 footer {
-  bottom: 8px;
-  display: block;
-  position: fixed;
-  right: 16px;
+  display: flex;
+  justify-content: center;
 }
