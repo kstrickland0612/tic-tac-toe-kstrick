@@ -40,7 +40,7 @@ const changePwFail = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  $('.user-message').text('Sign out success!')
+  $('.user-message').text('Sign out success! 👋')
   $('form').trigger('reset')
   store.user = null
   $('#new-game').hide()

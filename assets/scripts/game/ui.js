@@ -6,7 +6,7 @@ store.xGamesWin = 0
 store.oGamesWin = 0
 
 const winnerWinner = function () {
-  $('.game-updates').text('Game over! ' + store.winner + ' wins!')
+  $('.game-updates').text('Game over! ' + store.winner + ' wins! 🥳')
   $('.whose-turn').hide()
   if (store.winner === 'x') {
     store.xGamesWin++
@@ -17,7 +17,7 @@ const winnerWinner = function () {
 }
 
 const invalidMoveMessage = function () {
-  $('.game-updates').html(`Invalid move! `)
+  $('.game-updates').html('Invalid move! ')
 }
 
 const turnChange = function () {

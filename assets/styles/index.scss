@@ -1,5 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'typography';
+//
+// $background: #E0FFFF;
+//
+//
+// body {
+//   background-color: $background;
+// }
+
+body {
+  background-image: url('../rainbow-background.png');
+}
 
 h1 {
   display: flex;
@@ -50,8 +61,48 @@ h1 {
   width: 100px;
 }
 
-.box:hover {
+.box0:hover {
+  background-color: $orange;
+  opacity: .5;
+}
+
+.box1:hover {
+  background-color: $yellow;
+  opacity: .5;
+}
+
+.box2:hover {
+  background-color: $green;
+  opacity: .5;
+}
+
+.box3:hover {
   background-color: $blue;
+  opacity: .5;
+}
+
+.box4:hover {
+  background-color: $purple;
+  opacity: .5;
+}
+
+.box5:hover {
+  background-color: $purple;
+  opacity: .5;
+}
+
+.box6:hover {
+  background-color: $orange;
+  opacity: .5;
+}
+
+.box7:hover {
+  background-color: $yellow;
+  opacity: .5;
+}
+
+.box8:hover {
+  background-color: $green;
   opacity: .5;
 }
 
