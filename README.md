@@ -5,7 +5,7 @@ Welcome to my browser-based tic-tac-toe game, created during my time at General 
 
 This project means a lot to me. Three weeks ago I wouldn't have kown where to even start building a browser-based game. Through this project I've gained a better understanding of the potential behind everything I've been learning these past few weeks, and I was able to put conceptual things (that didn't make too much sense just sitting in my head) into practice.
 
-I held a lot of apprehension coming into this project. I'd been struggling through Codewars challenges on higher order functions and array iteration methods. I thought, "if I'm struggling with this super narrow scope of things, how am I going to build a fully functional app?".
+I held some apprehension coming into this project. I'd been struggling through Codewars challenges on higher order functions and array iteration methods. I thought, "if I'm having a hard time with this super narrow scope of things, how am I going to build a fully functional app?".
 
 Those fears went away as I dived deeper and deeper into the project, and I really enjoyed the process.
 
@@ -13,11 +13,13 @@ I found that I'm really good at breaking problems down into tiny pieces, and get
 
 Most of all, I learned to put my perfectionist tendencies aside and just get some working code out there as quickly as possible.
 
+I'm proud of the end result!
+
 xoxo, K
 
 ## Moods
 
-- **Day 1**: OVERWHELM! How do I deploy? How do I do this smartly with version control? How to even go about this project? Alright, x's and o's, need a gameboard, need an array...
+- **Day 1**: OVERWHELMED! How do I deploy? How do I do this smartly with version control? How to even go about this project? Alright, need x's and o's, need a gameboard, need an array...
 
 
 ![nervous](./Anguished-Face-Emoji-small.png "anguish")
@@ -152,7 +154,11 @@ The extra features user stories above lay out the things I'm most interested in 
 
 I did complete user story 12, which allowed me to pull how many games X won and 0 won during the signed-in user's current session.
 
-I'm very interested in web accessibility. I case about making the web work for everyone. User story 13 is all about making this app fully accessible to screen readers/voiceover in particular. I did not have time to complete this story, but this is something I have on the top of my mind.
+I also completed user story 14, which made the app fully functional on mobile devices.
+
+I'm very interested in web accessibility. I case about making the web work for everyone. User story 13 is all about making this app fully accessible to screen readers/voiceover in particular. I did not have time to complete this story, but this is something I have on the top of my mind moving forward.
+
+I am having a layout issue where the footer is very far away from the rest of my content when the user is signed in, which I'd like to fix once I know more tricks with Bootstrap and CSS.
 
 ## Wanna try it?
 
