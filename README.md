@@ -17,19 +17,19 @@ xoxo, K
 
 ## Moods
 
-Day 1:
+- Day 1:
 ![nervous](./Anguished-Face-Emoji-small.png)
 ![deep in thought](./Thinking-Emoji-small.png)
-Day 2:
+- Day 2:
 ![panicked](./Flushed-Face-Emoji-small.png)
-Day 3:
+- Day 3:
 ![relived](./Relieved-Emoji-small.png)
 ![paniked](./Flushed-Face-Emoji-small.png)
-Day 4:
-![relaxed](.Smiling-with-Sweat-Emoji-small.png)
-Day 5:
+- Day 4:
+![relaxed](./Smiling-with-Sweat-Emoji-small.png)
+- Day 5:
 ![welp](./Upside-Down-Face-Emoji-small.png)
-Day 6:
+- Day 6:
 ![very proud](./Woman-Hand-Gesture-Emoji-small.png)
 ![badass](./Smiling-Devil-Emoji-small.png)
 
