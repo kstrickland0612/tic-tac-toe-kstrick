@@ -158,8 +158,6 @@ I also completed user story 14, which made the app fully functional on mobile de
 
 I'm very interested in web accessibility. I case about making the web work for everyone. User story 13 is all about making this app fully accessible to screen readers/voiceover in particular. I did not have time to complete this story, but this is something I have on the top of my mind moving forward.
 
-I am having a layout issue where the footer is very far away from the rest of my content when the user is signed in, which I'd like to fix once I know more tricks with Bootstrap and CSS.
-
 ## Wanna try it?
 
 [You can play my tic-tac-toe game here!](https://kstrickland0612.github.io/tic-tac-toe-kstrick/)
