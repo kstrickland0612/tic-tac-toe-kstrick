@@ -37,7 +37,6 @@ const draw = function () {
 // GAME API STUFF
 
 const createGameSuccess = function (response) {
-  console.log('successfully created a new game: ', response)
   store.game = response.game
   $('.container').show()
   $('.whose-turn').text('x\'s turn!').show()
@@ -46,19 +45,18 @@ const createGameSuccess = function (response) {
 }
 
 const createGameFail = function (response) {
-  console.log('failed to create new game: ', response)
+  $('.user-message').text('Sorry, could not create new game.')
 }
 
 const updateGameSuccess = function (response) {
-  console.log('successfully updated the game: ', response)
+  // nothing needed here
 }
 
 const updateGameFail = function (response) {
-  console.log('failed to update the game: ', response)
+  $('.user-message').text('Sorry, could not update the game')
 }
 
 const getGamesSuccess = function (response) {
-  console.log('successfully got this game data: ', response)
   $('.user-message').text('')
   let gamesPlayed = 0
 
@@ -70,7 +68,6 @@ const getGamesSuccess = function (response) {
 }
 
 const getGamesFail = function (response) {
-  console.log('failed to get this game data: ', response)
   $('.user-stats').text('Sorry, unable to retrieve data.')
 }
 
