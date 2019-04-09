@@ -1,15 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'typography';
-//
-// $background: #E0FFFF;
-//
-//
-// body {
-//   background-color: $background;
-// }
 
 body {
-  background-image: url('../rainbow-background-min.png');
+  background-image: url('public/rainbow-background-min.png');
 }
 
 h1 {
